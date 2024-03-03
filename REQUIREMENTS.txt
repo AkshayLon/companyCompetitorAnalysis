@@ -1,0 +1,6 @@
+scikit-learn==1.4.0
+tensorflow==2.15.0
+tensorflow-hub==0.16.1
+yahooquery==2.3.7
+yfinance==0.2.37
+pandas==2.2.1
