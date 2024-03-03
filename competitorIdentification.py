@@ -17,8 +17,12 @@ class CompetitorAnalysis:
         self.ticker is a string representing the ticker symbol for the company.
         self.info saves all the basic information about the company from the yfinance api.
         """
-        self.ticker = stock
-        self.info = yf.Ticker(self.ticker).info
+        try:
+            self.ticker = stock
+            self.info = yf.Ticker(self.ticker).info
+        except Exception as e:
+            print(e)
+            raise
 
     def similar_group(self) -> str :
         """
@@ -132,6 +136,7 @@ class CompetitorAnalysis:
         
 
 if __name__=="__main__":
+
     if len(sys.argv) != 2:
         raise Exception("Give only one ticker symbol in all caps")
 
